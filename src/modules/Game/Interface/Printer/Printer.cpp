@@ -12,7 +12,7 @@ Printer::Printer() : messages() {}
 
 void Printer::printChoice(const string& title, const string& message, const vector<string>& options) {
     printSpecialMessage(title);
-    cout << message;
+    cout << message << "\n"; //there was a lack of /n here
     printOptions(options);
 }
 
@@ -26,7 +26,7 @@ void Printer::printSpecialMessage(const string& title) {
     string specialMessage = messages.getMessage(title);
 
     if (specialMessage.length() > 0) {
-        cout << specialMessage;
+        cout << specialMessage << "\n"; //there was a lack of /n here
     }
 }
 

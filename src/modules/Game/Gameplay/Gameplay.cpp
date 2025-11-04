@@ -3,6 +3,7 @@
 
 #include "Gameplay.h"
 #include "../Events/Events.h"
+#include "SpiritGenerator/SpiritGenerator.h"
 
 #include <string>
 
