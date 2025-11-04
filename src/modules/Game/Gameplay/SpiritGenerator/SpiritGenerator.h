@@ -3,5 +3,5 @@
 
 class SpiritGenerator {
 public: 
-    void statSelection(Events events);
+    vector<int> statSelection(Events events);
 };

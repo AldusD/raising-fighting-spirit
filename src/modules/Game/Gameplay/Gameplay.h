@@ -3,6 +3,7 @@
 
 
 #include <string>
+#include <vector>
 
 #include "../Events/Events.h"
 #include "../Interface/Interface.h"
@@ -18,6 +19,10 @@ private:
     Menus menus;
     Client& dbClient_;
     string handleAction(string actionType);
+
+    vector<int> player_stats = {0, 0, 0, 0, 0};
+    string menu_override = "";
+
 public:
     void start();    
     Gameplay(Client& dbClient) : 
