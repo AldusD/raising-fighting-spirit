@@ -7,8 +7,6 @@
 using namespace std;
 
 string Interface::handleEvent(Event event) {
-    Printer printer;
-    InputHandler inputHandler;
     string response;
 
     if (event.getType() == EventTypeEnum::CHOICE) {
