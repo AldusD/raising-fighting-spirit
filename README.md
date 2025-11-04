@@ -10,3 +10,7 @@
 ```bash
     docker rmi -f $(docker images -a -q)
 ```
+
+docker-compose up --build
+
+docker-compose run --rm app

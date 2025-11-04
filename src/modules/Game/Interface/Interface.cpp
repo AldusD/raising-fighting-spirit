@@ -13,8 +13,6 @@ string Interface::handleEvent(Event event) {
         int range = (int) event.getOptions().size() + 1; //the 1 offsets the difference between the two types of values
         printer.printChoice(event.getTitle(), event.getMessage(), event.getOptions());
         
-        // handle input
-        int range = (int) event.getOptions().size() + 1;
         string choice = inputHandler.handleChoiceInput(range);
         while(choice == "error") {
             printer.printSingleMessage(MessagesEnum::INVALID_CHOICE);
