@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void SpiritGenerator::statSelection (Events events) { 
+vector<int> SpiritGenerator::statSelection (Events events) { 
 
     int unspent_points = 6;
 
@@ -29,10 +29,12 @@ void SpiritGenerator::statSelection (Events events) {
         stats_numbers[int_stat_to_increase-1]++ ; //the -1 is to offset the difference between the vector and the answer from the player (vector starts at 0, player answer at 1)
 
         unspent_points -= 1;
+
     }
     
     Spirit player_spirit(vector<int> stats_numbers);
-    // PRINT THE EVENT AT THE END OF SPIRIT CREATION
+
+    return (stats_numbers);
 
 
 }
