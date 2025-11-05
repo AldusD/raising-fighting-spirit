@@ -1,0 +1,129 @@
+/* ======= ESTILO GERAL ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  line-height: 1.7;
+  color: #f2f2f2;
+  background-color: #0b0c10;
+  padding: 0;
+}
+
+/* ======= CABEÇALHO ======= */
+header {
+  background: linear-gradient(135deg, #1f2833, #45a29e);
+  text-align: center;
+  padding: 50px 20px;
+  color: #fff;
+  border-bottom: 3px solid #66fcf1;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #66fcf1;
+  text-shadow: 0 0 8px rgba(102, 252, 241, 0.6);
+}
+
+header p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ======= CONTEÚDO PRINCIPAL ======= */
+main {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+section {
+  background-color: #1f2833;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 10px rgba(102, 252, 241, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(102, 252, 241, 0.4);
+}
+
+section h2 {
+  color: #66fcf1;
+  border-left: 6px solid #45a29e;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+section p, section li {
+  color: #c5c6c7;
+  font-size: 1rem;
+}
+
+ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+pre {
+  background: #0b0c10;
+  border: 1px solid #45a29e;
+  padding: 10px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+code {
+  color: #66fcf1;
+  font-family: "Fira Code", monospace;
+}
+
+/* ======= LINKS ======= */
+a {
+  color: #66fcf1;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #45a29e;
+}
+
+/* ======= IMAGEM DIAGRAMA ======= */
+img {
+  max-width: 100%;
+  border: 2px solid #45a29e;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* ======= RODAPÉ ======= */
+footer {
+  text-align: center;
+  background: #1f2833;
+  padding: 20px;
+  border-top: 2px solid #45a29e;
+  color: #c5c6c7;
+  font-size: 0.9rem;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 20px;
+  }
+}
