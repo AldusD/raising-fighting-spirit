@@ -13,16 +13,16 @@ Menu Menus::getMenu(string menuTitle) {
     if (menuTitle == "start") {
         vector<string> options = { "New Game", "Load Game", "Update Game", "Exit -_-" };
         string message = "May your Spirit be pure, may you Will be strong\n";
-        vector<string> actions = { "create_player", "", "", "exit" };
-        vector<string> nextMenus = { "enemy_select", "update_user", "update_user",  "update_user" }; // TODO change it to correct values
+        vector<string> actions = { "create_game", "load_game", "", "exit" };
+        vector<string> nextMenus = { "enemy_select", "enemy_select", "update_user",  "start" }; // TODO change it to correct values
         return Menu(menuTitle, message, options, actions, nextMenus);
     }
 
     if (menuTitle == "update_user") {
         vector<string> options = { "Delete Game", "Update Game" };
         string message = "Which operation you want to do?\n";
-        vector<string> actions = { "", "" }; // TODO change it to correct values
-        vector<string> nextMenus = { "start", "start" }; // TODO change it to correct values
+        vector<string> actions = { "delete_game", "update_game" };
+        vector<string> nextMenus = { "start", "enemy_select" };
         return Menu(menuTitle, message, options, actions, nextMenus);
     }
     if (menuTitle == "enemy_select") {

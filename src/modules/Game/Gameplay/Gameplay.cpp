@@ -6,6 +6,7 @@
 #include "Combat.h"
 #include "SpiritGenerator/SpiritGenerator.h"
 #include "./PlayerHandler/PlayerHandler.h"
+#include "./SpiritHandler/SpiritHandler.h"
 
 #include <string>
 
@@ -45,18 +46,38 @@ string Gameplay::handleAction(string action) {
         return "exit";
     }
 
-    if (action == "create_player") {
-        PlayerHandler handler(dbClient_, events);
-        player_name = handler.createPlayer();
+    if (action == "create_game") {
+        PlayerHandler playerHandler(dbClient_, events);
+        SpiritHandler spiritHandler(dbClient_, events);
+        player_name = playerHandler.createPlayer();
         SpiritGenerator spiritgenerator;
         player_stats = spiritgenerator.statSelection(events);
+        spiritHandler.createSpirit(player_stats, player_name);
         return "continue";
     }
 
-    if (action == "generate_spirit") {
-        //SpiritGenerator spiritgenerator;
-        //player_stats = spiritgenerator.statSelection(events);
-        //return "continue"; // even if there is things to do, the result is going to tournament selection menu, which is handled by the previous menu 
+    if (action == "update_game") {
+        PlayerHandler playerHandler(dbClient_, events);
+        SpiritHandler spiritHandler(dbClient_, events);
+        player_name = playerHandler.updatePlayer();
+        SpiritGenerator spiritgenerator;
+        player_stats = spiritgenerator.statSelection(events);
+        
+        return "continue";
+    }
+
+    if (action == "delete_game") {
+        PlayerHandler playerHandler(dbClient_, events);
+        playerHandler.deletePlayer();
+        return "continue";
+    }
+
+    if (action == "load_game") {
+        PlayerHandler playerHandler(dbClient_, events);
+        SpiritHandler spiritHandler(dbClient_, events);
+        player_name = playerHandler.loadPlayer();
+        Spirit spirit = spiritHandler.findSpirit(player_name);
+        player_stats = { spirit.intelligence, spirit.speed, spirit.strength, spirit.vitality, spirit.stamina, 1, 1};
     }
 
     if (action == "minorcombat") {

@@ -12,5 +12,5 @@ public:
     int vitality = 0;
     int stamina = 0;
 
-    void getStats(vector<int> vector_stats);
+    void setStats(vector<int> vector_stats);
 };
